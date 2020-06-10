@@ -23,7 +23,7 @@ public class PaymentFactory implements IPaymentRate{
 		};
 	}
 	// METODO PARA MANAGER
-	
+
 	public static IPaymentRate createPaymentRateManager(){
 		return new IPaymentRate() {
 			@Override

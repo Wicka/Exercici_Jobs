@@ -34,8 +34,13 @@ public class JobsController {
 	}
 
 	public String getAllEmployees() {
-		// TODO Auto-generated method stub
-		return null;
+		String allEmployees = "";
+		for (AbsStaffMember member: repository.getAllMembers()) {
+			allEmployees= allEmployees +"\n"+ absStaffMember;
+
+		}
+				// TODO Auto-generated method stub
+		return allEmployees;
 	}
 
 	public void createVolunteer(String string, String string2, String string3) {

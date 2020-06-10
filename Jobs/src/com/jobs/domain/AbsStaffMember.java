@@ -10,6 +10,17 @@ public abstract class AbsStaffMember {
 
 	private static int COUNTER_MEMBERS = 1;
 
+	@Override
+	public String toString() {
+		return "AbsStaffMember{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", address='" + address + '\'' +
+				", phone='" + phone + '\'' +
+				", totalPaid=" + totalPaid +
+				'}';
+	}
+
 	public AbsStaffMember(String name, String address, String phone) throws Exception {
 		if (name.equals(""))
 			throw new Exception();

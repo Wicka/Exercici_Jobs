@@ -4,7 +4,7 @@ import com.jobs.domain.IPaymentRate;
 
 public class PaymentFactory implements IPaymentRate{
 
-	
+
 	public static IPaymentRate createPaymentRateBoss(){
 		return new IPaymentRate() {	
 			@Override
@@ -18,7 +18,7 @@ public class PaymentFactory implements IPaymentRate{
 		return new IPaymentRate() {
 			@Override
 			public double pay(double salaryPerMonth) {
-				return 0;//todo 
+				return salaryPerMonth*0.85;
 			}
 		};
 	}
@@ -28,10 +28,12 @@ public class PaymentFactory implements IPaymentRate{
 		return new IPaymentRate() {
 			@Override
 			public double pay(double salaryPerMonth) {
-				return 0;//todo
+				return salaryPerMonth*1.1;
 			}
 		};
 	}
+
+
 
 	@Override
 	public double pay(double salaryPerMonth) {

@@ -1,5 +1,6 @@
 package com.jobs.application;
 
+import com.jobs.domain.AbsStaffMember;
 import com.jobs.domain.Employee;
 import com.jobs.persistence.EmployeeRepository;
 
@@ -12,8 +13,10 @@ public class JobsController {
 		this.repository = new EmployeeRepository();
 	}
 	
-	public void createBossEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception{		
-		Employee boss = new Employee(name, address, phone,  salaryPerMonth, PaymentFactory.createPaymentRateBoss());
+	public void createBossEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception{
+
+       //MODIFICO LA DECLARACION PARA QUE SEA UN OBJETO AbsStaffMember COMO ESPERA RECIBIR EL METOD ADDMEMBERS
+        AbsStaffMember boss = new Employee(name, address, phone,  salaryPerMonth, PaymentFactory.createPaymentRateBoss());
 		repository.addMember(boss);
 	}
 	
@@ -36,7 +39,7 @@ public class JobsController {
 	public String getAllEmployees() {
 		String allEmployees = "";
 		for (AbsStaffMember member: repository.getAllMembers()) {
-			allEmployees= allEmployees +"\n"+ absStaffMember;
+			allEmployees= allEmployees + "\n" + member;
 
 		}
 				// TODO Auto-generated method stub

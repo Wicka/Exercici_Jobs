@@ -7,10 +7,13 @@ import com.jobs.domain.AbsStaffMember;
 
 public class EmployeeRepository {
 
-	private static List<AbsStaffMember> members=new ArrayList<>();
+	private static List<AbsStaffMember> members;
+
 	
 	public EmployeeRepository(){
-		
+		//INSTANCIA LA LISTA members EN EL CONSTRUCTOR
+		this.members=new ArrayList<>();
+
 	}
 	
 	public List<AbsStaffMember> getAllMembers(){
